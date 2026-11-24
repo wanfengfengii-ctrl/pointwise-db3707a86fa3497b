@@ -3,5 +3,5 @@
   "kind": "cli",
   "setup": [],
   "verify": ["python3", "-B", "check_project.py"],
-  "demo": ["python3", "-B", "-m", "analysis.workday", "demo"]
+  "demo": ["python3", "-B", "-m", "analysis.trial_demo"]
 }

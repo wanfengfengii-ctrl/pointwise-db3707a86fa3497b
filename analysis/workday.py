@@ -8,6 +8,7 @@ from tempfile import TemporaryDirectory
 from admission.roster import admit, initialize_roster
 from analysis.publication import PendingReport, initialize_reports, report
 from analysis.retrieval import FrozenReport, get
+from analysis.trials import initialize_trials
 from delivery.dispatch import deliver
 from delivery.records import initialize_dispatch
 from delivery.store import initialize_receipts
@@ -15,6 +16,7 @@ from station import SCORING_SITE, TRAINING_SITE, StationPath, connect_station, i
 from training.feedback import feedback
 from training.ledger import initialize_feedback_ledger
 from training.models import initialize_models
+from training.transfers import initialize_transfers
 from weighing.intake import initialize_actuals, weigh
 from weighing.units import encode_grams
 
@@ -33,9 +35,10 @@ def initialize(training_path: StationPath, scoring_path: StationPath) -> None:
         with transaction(source, write=True), transaction(target, write=True):
             initialize_station(source, TRAINING_SITE, (
                 initialize_models, initialize_feedback_ledger, initialize_roster, initialize_dispatch,
+                initialize_transfers,
             ))
             initialize_station(target, SCORING_SITE, (
-                initialize_receipts, initialize_actuals, initialize_reports,
+                initialize_receipts, initialize_actuals, initialize_reports, initialize_trials,
             ))
 
 
