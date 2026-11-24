@@ -1,0 +1,10 @@
+{
+  "pieces": [
+    {"piece_id": "A", "estimate_g": "10", "ticket_id": "WA", "actual_g": "11"},
+    {"piece_id": "B", "estimate_g": "10", "ticket_id": "WB", "actual_g": "15"}
+  ],
+  "feedback": {"feedback_id": "R1", "estimate_g": "10", "actual_g": "14"},
+  "later_feedback": {"feedback_id": "R2", "estimate_g": "7", "actual_g": "7"},
+  "report_id": "night-shift",
+  "report_order": ["B", "A"]
+}

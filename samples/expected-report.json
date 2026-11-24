@@ -1,0 +1,27 @@
+{
+  "actual": {
+    "pending_before_delivery": [
+      {"piece_id": "B", "prediction_missing": true, "actual_missing": true},
+      {"piece_id": "A", "prediction_missing": true, "actual_missing": false}
+    ],
+    "initially_unsigned": true,
+    "report": {
+      "report_id": "night-shift",
+      "summary": {
+        "rows": [
+          {"piece_id": "B", "delivery_id": "prediction/admission/B", "prediction_receipt_no": 1, "cut_id": 1, "prediction_g": "14", "ticket_id": "WB", "actual_g": "15", "signed_error_g": "1", "absolute_error_g": "1"},
+          {"piece_id": "A", "delivery_id": "prediction/admission/A", "prediction_receipt_no": 2, "cut_id": 0, "prediction_g": "10", "ticket_id": "WA", "actual_g": "11", "signed_error_g": "1", "absolute_error_g": "1"}
+        ],
+        "mae_g": "1"
+      },
+      "receipt": {"report_id": "night-shift", "receipt_no": 1}
+    }
+  },
+  "downstream": {
+    "report_id": "night-shift",
+    "receipt_no": 1,
+    "same_report": true,
+    "later_cut_id": 2,
+    "later_compensation_g": "2"
+  }
+}
